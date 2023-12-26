@@ -23,6 +23,7 @@ const Nav = styled.nav`
         display: flex;
         gap: 24px;
         align-items: center;
+        padding: 6px;
         li{
             a{
                 color: rgba(255,255,255,0.6);
