@@ -2,6 +2,8 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import styled from 'styled-components'
+import axios from '../api/axios';
+import request from '../api/request';
 
 function Mainvideos() {
     const [movie, setMovie] = useState(null);
@@ -12,10 +14,33 @@ function Mainvideos() {
         fetchdata();
     },[])
 
+    useEffect(()=>{
+        if(videoKey){
+            changeVideo();
+        }
+    },[])
+
     const fetchdata = async ()=>{
 
         try{
-           
+            const res = await axios.get(request.fetchNowPlaymovie)
+
+            const movieId = res.data.results[
+                Math.floor(Math.random()* res.data.results.length)
+            ].id;
+
+            const {data : moviedetail} = await axios.get(`movie/${movieId}`,{
+                params : {append_to_response : 'videos'},
+            })
+            if(moviedetail.videos && 
+                moviedetail.videos.results.length > 0){
+                setMovie(moviedetail);
+                setVideoKey(moviedetail.videos.results[0].key);
+
+                setTimeout(()=>{
+                    setShowimg(false)
+                },2000)
+            }
         }catch(error){
             console.error(error)
         }
