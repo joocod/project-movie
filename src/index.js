@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Notfound from './pages/Notfound';
+import Moviedetail from './pages/Moviedetail';
 
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
         element : <App/>,
         errorElement : <Notfound/>,
         children : []
+    },
+    {
+        path : 'movie/:movieId',
+        element : <Moviedetail/>
     }
 ])
 

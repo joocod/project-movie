@@ -8,7 +8,7 @@ import request from '../api/request';
 function Mainvideos() {
     const [movie, setMovie] = useState(null);
     const [videoKey, setVideoKey] = useState(null);
-    const [showimg, setShowimg] = useState(null);
+    const [showimg, setShowimg] = useState(true);
 
     useEffect(()=>{
         fetchdata();
@@ -18,7 +18,7 @@ function Mainvideos() {
         if(videoKey){
             changeVideo();
         }
-    },[])
+    },[videoKey])
 
     const fetchdata = async ()=>{
 
