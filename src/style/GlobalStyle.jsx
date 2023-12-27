@@ -52,5 +52,20 @@ img{
 	display: block;
 	width: 100%;
 }
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+input{
+    background: transparent;
+    border: none;
+}
+body,html{
+	background: #000000;
+	&.no-scroll{
+		overflow-y: hidden;
+	}
+}
 `
 export default GlobalStyle;

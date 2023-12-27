@@ -8,4 +8,5 @@
     5. Notfound.jsx 생성
     6. App.js 설정
     7. index.js 설정
+    8. Search.jsx 생성
 */
