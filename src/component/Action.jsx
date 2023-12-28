@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import {Swiper, SwiperSlide} from 'swiper/react'; 
 import { Navigation, Pagination } from 'swiper/modules';
+import { useSelector } from 'react-redux';
 
 function Action() {
+    const actionData = useSelector((state)=>state.action.movies, []) || []
 
     return (
         <div>
