@@ -9,4 +9,13 @@
     6. App.js 설정
     7. index.js 설정
     8. Search.jsx 생성
+    9. api.jsx 생성
+    10. axios.jsx 생성
+    11. request.jsx 생성
+    12. mainvideos.jsx 생성
+    13. app.js 설정
+    14. moviedetail.jsx 생성
+    15. index.js 설정
+    16. movielist.jsx 생성
+    17. action.jsx 생성
 */

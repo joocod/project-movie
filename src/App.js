@@ -3,6 +3,7 @@ import GlobalStyle from './style/GlobalStyle';
 import Main from './pages/Main';
 import Search from './component/Search';
 import Mainvideos from './component/Mainvideos';
+import Movielist from './component/Movielist';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Main/>
       <Search/>
       <Mainvideos/>
+      <Movielist/>
     </>
   );
 }
