@@ -7,6 +7,7 @@ import Movielist from './component/Movielist';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { thunk } from 'redux-thunk';
+import rootReducer from './store/reducer';
 
 const composen = window._REDUX_DEVTOOLS_EXTENTION_COMPOSE_ || compose;
 const store = createStore(rootReducer, composen(applyMiddleware(thunk)))

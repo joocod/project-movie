@@ -18,4 +18,6 @@
     15. index.js 설정
     16. movielist.jsx 생성
     17. action.jsx 생성
+    18. index.jsx 생성(/store)
+    19. index.jsx 생성(/store/reducer)
 */
