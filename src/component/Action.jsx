@@ -4,7 +4,6 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { useDispatch, useSelector } from 'react-redux';
 import Moviecard from './Moviecard';
-import '../style/swipercustom.css';
 
 import 'swiper/css';                // swiper 기본 css 적용 import
 import 'swiper/css/navigation';     // swiper 좌우 버튼 기본 css
@@ -88,3 +87,4 @@ const Movietitle = styled.div`
 const Moviewrapper = styled.div`
     height: 200px;
 `
+
