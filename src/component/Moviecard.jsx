@@ -1,4 +1,7 @@
 import React from 'react'
+import { IoIosPlay, IoIosArrowDown } from "react-icons/io";
+import { LuPlus } from "react-icons/lu";
+import { SlLike } from "react-icons/sl";
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -14,6 +17,12 @@ function Moviecard({movie, genreText}) {
             <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
             <Content className="addi-content">
                 <p>{movie.title}</p>
+                <div>
+                    <button className='btn1'><IoIosPlay /></button>
+                    <button className='btn2'><LuPlus /></button>
+                    <button className='btn3'><SlLike /></button>
+                    <button className='btn4'><IoIosArrowDown /></button>    
+                </div>
                 <div className='genres-wrapper'>
                     <span>{genreText}</span>
                 </div>
@@ -66,5 +75,28 @@ const Content = styled.div`
         font-size: 30px;
         opacity: 0;
         transition: 300ms 1000ms;
+    }
+    .btn-wrapper{
+        display: flex;
+        gap: 20px;
+        button{
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg{
+                width: 20px;
+                height: 20px;
+                path{
+                    color: black;
+                }
+            }
+            &.btn4{
+                margin-left: auto;
+            }
+        }
     }
 `

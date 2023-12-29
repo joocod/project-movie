@@ -21,4 +21,7 @@
     18. index.jsx 생성(/store)
     19. index.jsx 생성(/store/reducer)
     20. Moviecard.jsx 생성
+    21. GlobalStyle.jsx 설정(swiper css)
+    22. moviecard.jsx 설정(버튼 생성)
+    23. overview.jsx 생성
 */

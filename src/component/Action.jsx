@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchActionmovies } from '../store';
 import styled from 'styled-components'
+import Overview from './Overview';
+import Moviecard from './Moviecard';
+import { fetchGenres } from '../api/api';
+
 import {Swiper, SwiperSlide} from 'swiper/react'; 
 import { Navigation, Pagination } from 'swiper/modules';
-import { useDispatch, useSelector } from 'react-redux';
-import Moviecard from './Moviecard';
 
 import 'swiper/css';                // swiper 기본 css 적용 import
 import 'swiper/css/navigation';     // swiper 좌우 버튼 기본 css
 import 'swiper/css/pagination';     // swiper dot-list 기본 css   
-import { fetchActionmovies } from '../store';
-import { fetchGenres } from '../api/api';
 
-function Action() {
-    const actionData = useSelector((state)=>state.action.movies, []) || []
 
+function Action() {    
     const [itemSelect, setItemSelect] = useState({});
     const [isClick, setIsClick] = useState(false);
     const [genres, setGenres] = useState({});
+    
+    const actionData = useSelector((state)=>state.action.movies, []) || []
 
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -50,7 +53,7 @@ function Action() {
                     slidesPerView={5}
                     slidesPerGroup={5}
                     loop
-                    modules={{Navigation, Pagination}}
+                    modules={[Navigation, Pagination]}
                     navigation
                     pagination
                 >
@@ -68,6 +71,11 @@ function Action() {
                     </Moviewrapper>
                 </Swiper>
             </Moviecontainer>
+            {isClick && (
+                <OverviewWrap isVisible = {!!itemSelect}>
+                    <Overview/>
+                </OverviewWrap>
+            )}
         </div>
     )
 }
@@ -88,3 +96,6 @@ const Moviewrapper = styled.div`
     height: 200px;
 `
 
+const OverviewWrap = styled.div`
+    
+`
